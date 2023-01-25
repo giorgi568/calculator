@@ -81,33 +81,34 @@ function clearScreen(){
 
 function evaluate(){
     let equation = displayValue.textContent;
-    let currentOperator;
-    let leftValue = 0;
-    let rightValue;
+    let currentOperator = "";
+    let leftValue = "";
+    let rightValue ="";
     if(equation[0] === "+" || equation[0] === "-" || equation[0] === "*" || equation[0] === "/"){
         return "this cant be evaluated";
     }
     for(i=0; i<equation.length; i++){
-        // console.log(i)
+        if(rightValue !== "" && (equation[i] === "+" || equation[i] === "-" || equation[i] === "*" || equation[i] === "/")){
+            leftValue = operate(currentOperator, +leftValue, +rightValue);
+            rightValue = "";
+        }
+
         if(equation[i] === "+" || equation[i] === "-" || equation[i] === "*" || equation[i] === "/"){
             currentOperator = equation[i];
-            console.log("1");
-            console.log(i);
-        }else if (leftValue = undefined){
+            // console.log(`first :${i} :${equation[i]} :${currentOperator}`);
+        }else if (currentOperator === ""){
             leftValue += equation[i];
-            console.log("2");
+            // console.log(`second :${i} :${equation[i]} :${leftValue}`);
         }else{
             rightValue += equation[i];
-            console.log("1");
-        }
-        if(rightValue !== undefined){
-        //    console.log("1: " + currentOperator);
-        //    console.log("2: " + leftValue);
-        //    console.log("3: " + rightValue);
-           leftValue = operate(currentOperator, +leftValue, +rightValue);
-           rightValue = undefined;
-           currentOperator = undefined;
+            // console.log(`third :${i} :${equation[i]} :${rightValue}`);
         }
     }
+    if(rightValue !== ""){
+       leftValue = operate(currentOperator, +leftValue, +rightValue);
+       rightValue = "";
+       currentOperator = "";
+    }
+    // leftValue = operate(currentOperator, +leftValue, +rightValue);
     return leftValue;
 }
