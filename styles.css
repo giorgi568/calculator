@@ -1,10 +1,11 @@
 .calculator{
-    width: 600px;
+    width: 400px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid;
+    /* flex-shrink: 1; */
 }
 .rows{
     display: flex;
@@ -53,15 +54,10 @@
     border-color: blue;
      
 }
-.wrapper{
-    display: flex;
+.dot{
+    font-size: 20px;
 }
-/* .clear{
-    height: 350px;
-    width: 150px;
+body{
     display: flex;
     justify-content: center;
-    align-items: center;
-    border: 1px solid;
-    border-color: brown;
-} */
+}

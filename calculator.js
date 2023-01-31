@@ -152,6 +152,47 @@ function clearScreen(){
     displayValue.textContent = "";
 }
 
+// adding keyboard support
+window.addEventListener('keydown', (e) => {
+    if(e.key == "1"){
+        one.click();
+    }else if(e.key == "2"){
+        two.click();
+    }else if(e.key == "3"){
+        three.click();
+    }else if(e.key == "4"){
+        four.click();
+    }else if(e.key == "5"){
+        five.click();
+    }else if(e.key == "6"){
+        six.click();
+    }else if(e.key == "7"){
+        seven.click();
+    }else if(e.key == "8"){
+        eight.click();
+    }else if(e.key == "9"){
+        nine.click();
+    }else if(e.key == "0"){
+        zero.click();
+    }else if(e.key == "*"){
+        multiplySymbol.click();
+    }else if(e.key == "/"){
+        divideSymbol.click();
+    }else if(e.key == "+"){
+        plus.click();
+    }else if(e.key == "-"){
+        minus.click();
+    }else if(e.key == "^"){
+        exponentiationOperator.click();
+    }else if(e.key == "."){
+        dot.click();
+    }else if(e.key == "Backspace"){
+        backspace.click();
+    }else if(e.key == "Enter"){
+        equals.click();
+    }
+})
+
 function evaluate(){
     let equation = displayValue.textContent;
     let currentOperator = "";
