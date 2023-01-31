@@ -192,6 +192,7 @@ window.addEventListener('keydown', (e) => {
     }else if(e.key == "Backspace"){
         backspace.click();
     }else if(e.key == "Enter"){
+        e.preventDefault();
         equals.click();
     }
 })
