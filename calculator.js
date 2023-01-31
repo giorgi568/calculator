@@ -113,6 +113,9 @@ eight.addEventListener("click", function (){
 nine.addEventListener("click", function (){ 
     if(limit()){displayValue.textContent += "9"}
 });
+zero.addEventListener("click", function (){ 
+    if(limit()){displayValue.textContent += "0"}
+});
 dot.addEventListener("click", function (){ 
     if(limit()){
      if(!displayValue.textContent.includes(".") && !displayValue.textContent == "")
