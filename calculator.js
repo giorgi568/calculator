@@ -1,26 +1,26 @@
 function add(num1, num2){
-    return num1 + num2;
+    return Math.round((num1 + num2) * 10000) / 10000;
 }
 
 function substract(num1, num2){
-    return num1 - num2;
+    return Math.round((num1 - num2) * 10000) / 10000;
 }
 
 function multiply(num1, num2){
-    return num1 * num2;
+    return Math.round((num1 * num2) * 10000) / 10000;
 }
 
 function divide(num1, num2){
     if(num2 === 0){
         return "you cant divide by 0, buddy"
     }
-    return num1 / num2;
+    return Math.round((num1 / num2) * 10000) / 10000;;
 }
 function exponentiation(num1, num2){
     if(num1 > 20 || num2 > 20){
         return "cant calculate number that high"
     }
-    return num1 ** num2;
+    return Math.round((num1 ** num2) * 10000) / 10000;;
 }
 
 function operate(operator, num1, num2){
@@ -231,7 +231,7 @@ function evaluate(){
     }
     // leftValue = operate(currentOperator, +leftValue, +rightValue);
     // console.log(leftValue,+ "  " + leftValue.toString().length);
-    // heres a code that makes long integrals round up. 
+    // heres a code that makes long decimals round up. 
     if(leftValue.toString().includes(".") && leftValue.toString().length > 10){
         leftValue = Math.floor(leftValue * 100000) /100000;
     } 
