@@ -107,7 +107,7 @@ six.addEventListener("click", function (){
 seven.addEventListener("click", function (){ 
     if(limit()){displayValue.textContent += "7"}
 });
-eight.addEventListener("click", function (){ 
+eight.addEventListener("click", function (){
     if(limit()){displayValue.textContent += "8"}
 });
 nine.addEventListener("click", function (){ 
@@ -118,8 +118,10 @@ zero.addEventListener("click", function (){
 });
 dot.addEventListener("click", function (){ 
     if(limit()){
-     if(!displayValue.textContent.includes(".") && !displayValue.textContent == "")
-        {displayValue.textContent += ".";}
+        let tmp = displayValue.textContent.split(/[^0-9.]/g);
+        let last = tmp.pop();
+        if(!last.includes(".") && !displayValue.textContent == "")
+            {displayValue.textContent += ".";}
 }
 });
 // minus.addEventListener("click", () => displayValue.textContent += "-");
@@ -202,7 +204,7 @@ function evaluate(){
     let currentOperator = "";
     let leftValue = "";
     let rightValue = "";
-    if(equation[0] === "+" || equation[0] === "-" || equation[0] === "*" || equation[0] === "/" || equation[0] === "^"){
+    if(equation[0] === "+" || equation[0] === "*" || equation[0] === "/" || equation[0] === "^"){
         return "this cant be evaluated";
     }
     for(i=0; i<equation.length; i++){
@@ -232,7 +234,6 @@ function evaluate(){
     // heres a code that makes long integrals round up. 
     if(leftValue.toString().includes(".") && leftValue.toString().length > 10){
         leftValue = Math.floor(leftValue * 100000) /100000;
-        console.log("heres problem");
     } 
     return leftValue;
 }
