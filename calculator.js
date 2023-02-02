@@ -74,17 +74,33 @@ function limit(){
         return true;
     }
 }
+function isNotEmpty(){
+    if(displayValue.textContent.length == 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+function doubleOperator(){
+    let tmp = displayValue.textContent.split("");
+    let last = tmp.pop();
+    if(last == "+" || last == "-" || last == "*" || last == "/" || last == "^" ){
+        return false;
+    }else{
+        return true;
+    }
+}
 plus.addEventListener("click", function (){ 
-    if(limit()){displayValue.textContent += "+"}
+    if(doubleOperator() && isNotEmpty()){displayValue.textContent += "+"}
 });
 minus.addEventListener("click", function (){ 
-    if(limit()){displayValue.textContent += "-"}
+    if(doubleOperator()){displayValue.textContent += "-"}
 });
 multiplySymbol.addEventListener("click", function (){ 
-    if(limit()){displayValue.textContent += "*"}
+    if(doubleOperator() && isNotEmpty()){displayValue.textContent += "*"}
 });
 divideSymbol.addEventListener("click", function (){ 
-    if(limit()){displayValue.textContent += "/"}
+    if(doubleOperator() && isNotEmpty()){displayValue.textContent += "/"}
 });
 one.addEventListener("click", function (){ 
     if(limit()){displayValue.textContent += "1"}
@@ -124,29 +140,14 @@ dot.addEventListener("click", function (){
             {displayValue.textContent += ".";}
 }
 });
-// minus.addEventListener("click", () => displayValue.textContent += "-");
-// multiplySymbol.addEventListener("click", () => displayValue.textContent += "*");
-// divideSymbol.addEventListener("click", () => displayValue.textContent += "/");
-// one.addEventListener("click", () => displayValue.textContent += "1");
-// two.addEventListener("click", () => displayValue.textContent += "2");
-// three.addEventListener("click", () => displayValue.textContent += "3");
-// four.addEventListener("click", () => displayValue.textContent += "4");
-// five.addEventListener("click", () => displayValue.textContent += "5");
-// six.addEventListener("click", () => displayValue.textContent += "6");
-// seven.addEventListener("click", () => displayValue.textContent += "7");
-// eight.addEventListener("click", () => displayValue.textContent += "8");
-// nine.addEventListener("click", () => displayValue.textContent += "9");
-// zero.addEventListener("click", () => displayValue.textContent += "0");
-// dot.addEventListener("click", function() { 
-//     if(!displayValue.textContent.includes(".") && !displayValue.textContent == ""){displayValue.textContent += ".";}
-// });
+
 backspace.addEventListener("click", function() {
     tempVar = Array.from(displayValue.textContent);
     tempVar.pop();
     displayValue.textContent = tempVar.join("");
 })
 exponentiationOperator.addEventListener("click", function (){ 
-    if(limit()){displayValue.textContent += "^"}
+    if(doubleOperator() && isNotEmpty()){displayValue.textContent += "^"}
 });
 // exponentiationOperator.addEventListener("click", () => displayValue.textContent += "^");
 
@@ -204,9 +205,6 @@ function evaluate(){
     let currentOperator = "";
     let leftValue = "";
     let rightValue = "";
-    if(equation[0] === "+" || equation[0] === "*" || equation[0] === "/" || equation[0] === "^"){
-        return "this cant be evaluated";
-    }
     for(i=0; i<equation.length; i++){
         if(rightValue !== "" && (equation[i] === "+" || equation[i] === "-" || equation[i] === "*" || equation[i] === "/" || equation[i] === "^")){
             leftValue = operate(currentOperator, +leftValue, +rightValue);
