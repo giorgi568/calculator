@@ -1,16 +1,28 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+}
+
 .calculator{
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 350px;
+    /* padding: 30px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid;
+    /* border: 1px solid; */
     /* flex-shrink: 1; */
+    border-radius: 1rem;
+    overflow: hidden;
+    gap: 0.5rem;
 }
 .rows{
     display: flex;
     justify-content: space-between;
     height: 25%;
+    /* border-radius: ; */
+    gap: 0.5rem;
+
 }
 .operator{
     border: 1px solid;
@@ -18,14 +30,16 @@
     justify-content: center;
     width: 25%;
     align-items: center;
-
+    border-radius: 25px;
 }
 .equals{
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 55%;
     /* following is making up for borders of numbers e.g 7 and 8 */
     padding-left: 2px;
+    border-radius: 25px;
+
 }
 .number{
     border: 1px solid;
@@ -33,6 +47,7 @@
     justify-content: center;
     width: 25%;
     align-items: center;
+    border-radius: 25px;
 }
 .zero{
     width: 25%;
@@ -45,8 +60,8 @@
 .display{
     display: flex;
     box-sizing: border-box;
-    max-width: 602px;
-    height: 50px;
+    max-width: 600px;
+    height: 90px;
     justify-content: flex-end;
     padding: 10px;
     align-items: center;
