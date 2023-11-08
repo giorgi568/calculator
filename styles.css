@@ -1,20 +1,29 @@
 body{
+  display: flex;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
+  align-items: center;
+  height: 100vh;
+  background-color: #020617;
 }
 
 .calculator{
-    width: 300px;
-    height: 350px;
-    /* padding: 30px; */
+    width: 80vh;
+    max-width: 400px;
+    height: 80vh;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     /* border: 1px solid; */
     /* flex-shrink: 1; */
-    border-radius: 1rem;
+    border-radius: 25px;
     overflow: hidden;
     gap: 0.5rem;
+
+    /* background-color: #64748b; */
+    background-color: black;
 }
 .rows{
     display: flex;
@@ -25,12 +34,16 @@ body{
 
 }
 .operator{
-    border: 1px solid;
+    /* border: 1px solid; */
     display: flex;
     justify-content: center;
     width: 25%;
     align-items: center;
     border-radius: 25px;
+    font-size: 4vh;
+    cursor: pointer;
+    background-color: #facc15;
+    user-select: none;
 }
 .equals{
     display: flex;
@@ -39,15 +52,20 @@ body{
     /* following is making up for borders of numbers e.g 7 and 8 */
     padding-left: 2px;
     border-radius: 25px;
-
+    font-size: 4vh;
 }
 .number{
-    border: 1px solid;
+    /* border: 1px solid; */
     display: flex;
     justify-content: center;
     width: 25%;
     align-items: center;
     border-radius: 25px;
+    font-size: 4vh;
+    cursor: pointer;
+    background-color: #d1d5db;
+    user-select: none;
+
 }
 .zero{
     width: 25%;
@@ -60,19 +78,55 @@ body{
 .display{
     display: flex;
     box-sizing: border-box;
-    max-width: 600px;
-    height: 90px;
+    /* max-width: 600px; */
+    height: 30vh;
     justify-content: flex-end;
     padding: 10px;
     align-items: center;
-    border: 1px solid;
-    border-color: blue;
+    /* border: 1px solid; */
+    /* border-color: blue; */
+    border-radius: 25px;
+    background-color: #fde68a;
+    font-family: 'Orbitron';
      
 }
 .dot{
-    font-size: 20px;
+    font-size: 7vh;
 }
-body{
-    display: flex;
-    justify-content: center;
+button{
+  border: none;
+  transition: background-color 0.2s ;
+  font-family: 'Orbitron'; 
+}
+
+.number:focus{
+  animation: 0.5s ease-out colortrailnumber;
+}
+.operator:focus{
+  animation: 0.5s ease-out colortrailoperator;
+}
+
+
+@keyframes colortrailnumber {
+  50%{
+    background-color: #7c3aed;
+    color: white;
+  }
+  to{
+    background-color: #d1d5db;
+    color: black;
+  }
+}
+@keyframes colortrailoperator {
+  50%{
+    background-color: #7c3aed;
+    color: white;
+  }
+  to{
+    background-color: #facc15;
+    color: black;
+  }
+}
+.backspace{
+  font-weight: 600;
 }
