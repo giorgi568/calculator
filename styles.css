@@ -1,4 +1,4 @@
-body{
+body {
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -9,127 +9,136 @@ body{
   background-color: #020617;
 }
 
-.calculator{
-    width: 80vw;
-    /* min-width: 70vw; */
-    max-width: 350px;
-    height: 80vh;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* border: 1px solid; */
-    /* flex-shrink: 1; */
-    border-radius: 25px;
-    overflow: hidden;
-    gap: 0.5rem;
-
-    /* background-color: #64748b; */
-    background-color: black;
+.calculator {
+  width: 98vw;
+  /* min-width: 70vw; */
+  height: 90vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid; */
+  /* flex-shrink: 1; */
+  border-radius: 25px;
+  overflow: hidden;
+  gap: 0.5rem;
+  
+  /* background-color: #64748b; */
+  background-color: black;
 }
-.rows{
-    display: flex;
-    justify-content: space-between;
-    height: 25%;
-    /* border-radius: ; */
-    gap: 0.5rem;
-
+.rows {
+  display: flex;
+  justify-content: space-between;
+  height: 25%;
+  /* border-radius: ; */
+  gap: 0.5rem;
 }
-.operator{
-    /* border: 1px solid; */
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    align-items: center;
-    border-radius: 25px;
-    font-size: 4vh;
-    cursor: pointer;
-    background-color: #facc15;
-    user-select: none;
+.operator {
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 4vh;
+  background-color: #facc15;
+  user-select: none;
 }
-.equals{
-    display: flex;
-    justify-content: center;
-    width: 55%;
-    /* following is making up for borders of numbers e.g 7 and 8 */
-    padding-left: 2px;
-    border-radius: 25px;
-    font-size: 4vh;
+.equals {
+  display: flex;
+  justify-content: center;
+  width: 55%;
+  /* following is making up for borders of numbers e.g 7 and 8 */
+  padding-left: 2px;
+  border-radius: 25px;
+  font-size: 4vh;
 }
-.number{
-    /* border: 1px solid; */
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    align-items: center;
-    border-radius: 25px;
-    font-size: 4vh;
-    cursor: pointer;
-    background-color: #d1d5db;
-    user-select: none;
-
+.number {
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 4vh;
+  background-color: #d1d5db;
+  user-select: none;
 }
-.zero{
-    width: 25%;
+.zero {
+  width: 25%;
 }
 /* .container{
     display: flex;
     flex-direction: column;
 
 } */
-.display{
-    display: flex;
-    box-sizing: border-box;
-    /* max-width: 600px; */
-    height: 30vh;
-    justify-content: flex-end;
-    padding: 10px;
-    align-items: center;
-    /* border: 1px solid; */
-    /* border-color: blue; */
-    border-radius: 25px;
-    background-color: #fde68a;
-    font-family: 'Orbitron';
-     
+.display {
+  display: flex;
+  box-sizing: border-box;
+  /* max-width: 600px; */
+  height: 60vh;
+  justify-content: flex-end;
+  padding: 10px;
+  align-items: center;
+  /* border: 1px solid; */
+  /* border-color: blue; */
+  border-radius: 25px;
+  background-color: #fde68a;
+  font-family: 'Orbitron';
 }
-.dot{
-    font-size: 7vh;
+.dot {
+  font-size: 7vh;
 }
-button{
+button {
   border: none;
-  transition: background-color 0.2s ;
-  font-family: 'Orbitron'; 
+  transition: background-color 0.2s;
+  font-family: 'Orbitron';
 }
 
-.number:focus{
+.number:focus {
   animation: 0.5s ease-out colortrailnumber;
 }
-.operator:focus{
+.operator:focus {
   animation: 0.5s ease-out colortrailoperator;
 }
 
-
 @keyframes colortrailnumber {
-  50%{
+  50% {
     background-color: #7c3aed;
     color: white;
   }
-  to{
+  to {
     background-color: #d1d5db;
     color: black;
   }
 }
 @keyframes colortrailoperator {
-  50%{
+  50% {
     background-color: #7c3aed;
     color: white;
   }
-  to{
+  to {
     background-color: #facc15;
     color: black;
   }
 }
-.backspace, .exponentiation{
+.backspace,
+.exponentiation {
   font-weight: 600;
 }
 
+@media (min-width: 700px) {
+  .calculator{
+    width: 80vw;
+    max-width: 350px;
+    height: 80vh;
+  }
+  .display{
+    height: 30vh;
+  }
+  button {
+    cursor: pointer;
+  }
+  /* this is only so on mobiles it wont have 
+  blue box when clicking the putton */
+}
