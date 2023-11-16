@@ -91,37 +91,14 @@ body {
 }
 button {
   border: none;
-  transition: background-color 0.2s;
+  transition: background-color 0.1s ease-in-out;
   font-family: 'Orbitron';
 }
 
-.number:focus {
-  animation: 0.5s ease-out colortrailnumber;
-}
-.operator:focus {
-  animation: 0.5s ease-out colortrailoperator;
+button:active{
+  background-color: #7c3aed;
 }
 
-@keyframes colortrailnumber {
-  50% {
-    background-color: #7c3aed;
-    color: white;
-  }
-  to {
-    background-color: #d1d5db;
-    color: black;
-  }
-}
-@keyframes colortrailoperator {
-  50% {
-    background-color: #7c3aed;
-    color: white;
-  }
-  to {
-    background-color: #facc15;
-    color: black;
-  }
-}
 .backspace,
 .exponentiation {
   font-weight: 600;
